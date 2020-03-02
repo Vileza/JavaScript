@@ -11,20 +11,21 @@
       exibeMensagemErro(erros);
       return;
     }
+    
+    adicionaPacienteNaTabela(paciente);
 
+    form.reset();
 
-
-    var pacienteTr        = mostraTr(paciente);
-    var tabela            = document.querySelector("#tabela-pacientes");
-
-  tabela.appendChild(pacienteTr);
-
-  form.reset();
-
-  var mensagemErro = document.querySelector("#mensagens-erro");
-  mensagemErro.innerHTML = "";
+    var mensagemErro = document.querySelector("#mensagens-erro");
+    mensagemErro.innerHTML = "";
 
 });
+
+  function adicionaPacienteNaTabela(paciente){
+    var pacienteTr        = mostraTr(paciente);
+    var tabela            = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+  }
 
 // Para cada item da variável "erros", executa a função
 //Na função criado um elemento "li" do tipo html
@@ -97,3 +98,6 @@
 
     return td;
   }
+
+  //console.log(pacienteTr);
+  console.log(paciente);
